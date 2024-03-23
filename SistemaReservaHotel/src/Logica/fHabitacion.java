@@ -1,7 +1,6 @@
 
 package Logica;
 
-import Persistencia.vHabitacion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,7 +25,7 @@ public class fHabitacion {
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
         
-        sSQL="Selec * from habitacion where piso like '%"+ buscar + "%'order by idhabitacion";
+        sSQL="Select * from habitacion where piso like '%"+ buscar + "%'order by idhabitacion";
         
         try {
             Statement st = cn.createStatement();
@@ -80,20 +79,52 @@ public class fHabitacion {
     }
     
     public boolean editar (vHabitacion dts){
+        sSQL="update habitacion set numero=?, piso=?, descripcion=?, caracteristicas=?, precio_diario=?, "
+                    + "estado=?, tipo_habitacion=? where idhabitacion=?";
         try {
+            
+            PreparedStatement pst = cn.prepareStatement(sSQL);
+            pst.setString(1, dts.getNumero());
+            pst.setString(2, dts.getPiso());
+            pst.setString(3, dts.getDescripcion());
+            pst.setString(4, dts.getCaracteristicas());
+            pst.setDouble(5, dts.getPrecio_diario());
+            pst.setString(6, dts.getEstado());
+            pst.setString(7, dts.getTipo_habitacion());
+            pst.setInt(8, dts.getIdhabitacion());
+            
+            int n=pst.executeUpdate();
+            
+            if(n!=0){
+                return true;
+            }else{
+                return false;
+            }
             
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
+            return false;
         }
     }   
     
     public boolean eliminar (vHabitacion dts){
+        sSQL="delete from habitacion where idhabitacion=?";
         try {
+            PreparedStatement pst = cn.prepareStatement(sSQL);
             
+            pst.setInt(1, dts.getIdhabitacion());
+            
+            int n=pst.executeUpdate();
+            
+            if(n!=0){
+                return true;
+            }else{
+                return false;
+            }
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
+            return false;
         }
     }   
         
-    }
 }
