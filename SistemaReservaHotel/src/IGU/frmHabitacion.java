@@ -1,6 +1,6 @@
 package IGU;
 
-import Logica.fHabitacion;
+import Persistencia.fHabitacion;
 import Logica.vHabitacion;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
