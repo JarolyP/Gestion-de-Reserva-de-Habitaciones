@@ -1,6 +1,7 @@
 
 package Logica;
 
+import Persistencia.conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
