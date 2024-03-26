@@ -101,9 +101,9 @@ public class fCliente {
     }
     
     public boolean editar (vCliente dts){
-        sSQL="update persona set nombre=?, apaterno=?, amaterno=?, tipo_documento=?, num_documento=?, direccion=?, telefono=?, email=?, "
-                + " descripcion=?, unidad_medida=?, precio_venta=? where idpersona=?";
-        
+        sSQL="update persona set nombre=?, apaterno=?, amaterno=?, tipo_documento=?, num_documento=?, direccion=?, telefono=?, email=?"
+                + " where idpersona=?";
+ 
         sSQL2="update persona set codigo_cliente=?"
                 + " where idpersona=?";
         try {
@@ -143,20 +143,30 @@ public class fCliente {
         }
     }   
     
-    public boolean eliminar (vProducto dts){
-        sSQL="delete from producto where idproducto=?";
+    public boolean eliminar (vCliente dts){
+        sSQL="delete from cliente where idpersona=?";
+        sSQL2="delete from persona where idpersona=?";
         try {
             PreparedStatement pst = cn.prepareStatement(sSQL);
+            PreparedStatement pst2 = cn.prepareStatement(sSQL2);
             
-            pst.setInt(1, dts.getIdproducto());
+            pst.setInt(1, dts.getIdpersona());
+           
+            pst2.setInt(1, dts.getIdpersona());
             
             int n=pst.executeUpdate();
             
             if(n!=0){
-                return true;
+                int n2=pst2.executeUpdate();
+                if (n2!=0) {
+                    return true;
+                }else{
+                    return false;
+                }
             }else{
                 return false;
             }
+            
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
             return false;

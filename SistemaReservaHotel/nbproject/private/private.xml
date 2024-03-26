@@ -4,11 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/Persistencia/fProducto.java</file>
+            <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/Persistencia/fCliente.java</file>
             <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/IGU/frmProducto.java</file>
-            <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/Logica/vHabitacion.java</file>
-            <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/Persistencia/fHabitacion.java</file>
-            <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/Logica/vProducto.java</file>
-            <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/IGU/frmHabitacion.java</file>
+            <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/Logica/vPersona.java</file>
+            <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/Logica/vCliente.java</file>
+            <file>file:/C:/Users/Acer/Desktop/Prog/Git/Gestion%20de%20Reserva%20de%20Habitaciones/SistemaReservaHotel/src/IGU/frmCliente.java</file>
         </group>
     </open-files>
 </project-private>
