@@ -62,7 +62,7 @@ public class fCliente {
     public boolean insertar (vCliente dts){
         sSQL="insert into persona (nombre,apaterno,amaterno,tipo_documento,num_documento,direccion,telefono,email)"+
                 "values (?,?,?,?,?,?,?,?)";
-        sSQL2="insert into cliente (idperosna,codigo_cliente)"+
+        sSQL2="insert into cliente (idpersona,codigo_cliente)"+
                 "values ((select idpersona from persona order by idpersona desc limit 1),?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sSQL);

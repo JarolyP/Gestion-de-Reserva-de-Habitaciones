@@ -1,5 +1,6 @@
 package IGU;
 
+import Logica.vCliente;
 import Persistencia.fCliente;
 import Persistencia.fProducto;
 import javax.swing.JOptionPane;
@@ -24,12 +25,12 @@ public class frmCliente extends javax.swing.JFrame {
     }
     
     void inhabilitar(){
-        txtIdpersona.setVisible(false);
+        txtidpersona.setVisible(false);
         
         cmbtipo_Doc.setEnabled(false);
         txtNombre.setEnabled(false);
         txtaPaterno.setEnabled(false);
-        txtaaMaterno.setEnabled(false);
+        txtaMaterno.setEnabled(false);
         txtnum_Doc.setEnabled(false);
         txtDireccion.setEnabled(false);
         txtTelefono.setEnabled(false);
@@ -40,10 +41,10 @@ public class frmCliente extends javax.swing.JFrame {
         btnCancelar.setEnabled(false);
         btnEliminar.setEnabled(false);
         
-        txtIdpersona.setText("");
+        txtidpersona.setText("");
         txtNombre.setText("");
         txtaPaterno.setText("");
-        txtaaMaterno.setText("");
+        txtaMaterno.setText("");
         txtnum_Doc.setText("");
         txtDireccion.setText("");
         txtTelefono.setText("");
@@ -52,12 +53,12 @@ public class frmCliente extends javax.swing.JFrame {
     }
     
     void habilitar(){
-        txtIdpersona.setVisible(false);
+        txtidpersona.setVisible(false);
         
         cmbtipo_Doc.setEnabled(true);
         txtNombre.setEnabled(true);
         txtaPaterno.setEnabled(true);
-        txtaaMaterno.setEnabled(true);
+        txtaMaterno.setEnabled(true);
         txtnum_Doc.setEnabled(true);
         txtDireccion.setEnabled(true);
         txtTelefono.setEnabled(true);
@@ -68,10 +69,10 @@ public class frmCliente extends javax.swing.JFrame {
         btnCancelar.setEnabled(true);
         btnEliminar.setEnabled(true);
         
-        txtIdpersona.setText("");
+        txtidpersona.setText("");
         txtNombre.setText("");
         txtaPaterno.setText("");
-        txtaaMaterno.setText("");
+        txtaMaterno.setText("");
         txtnum_Doc.setText("");
         txtDireccion.setText("");
         txtTelefono.setText("");
@@ -103,7 +104,7 @@ public class frmCliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         txtNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtIdpersona = new javax.swing.JTextField();
+        txtidpersona = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtnum_Doc = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -114,7 +115,7 @@ public class frmCliente extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtaPaterno = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtaaMaterno = new javax.swing.JTextField();
+        txtaMaterno = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtDireccion = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -149,9 +150,9 @@ public class frmCliente extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre:");
 
-        txtIdpersona.addActionListener(new java.awt.event.ActionListener() {
+        txtidpersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdpersonaActionPerformed(evt);
+                txtidpersonaActionPerformed(evt);
             }
         });
 
@@ -211,9 +212,9 @@ public class frmCliente extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Apellido Materno:");
 
-        txtaaMaterno.addActionListener(new java.awt.event.ActionListener() {
+        txtaMaterno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtaaMaternoActionPerformed(evt);
+                txtaMaternoActionPerformed(evt);
             }
         });
 
@@ -263,7 +264,7 @@ public class frmCliente extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(194, 194, 194)
-                .addComponent(txtIdpersona, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtidpersona, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
@@ -289,8 +290,7 @@ public class frmCliente extends javax.swing.JFrame {
                                         .addComponent(jLabel4)
                                         .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(27, 27, 27)
-                                    .addComponent(txtaaMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtaMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,7 +322,7 @@ public class frmCliente extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(txtIdpersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtidpersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -333,7 +333,7 @@ public class frmCliente extends javax.swing.JFrame {
                     .addComponent(txtaPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtaaMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtaMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -495,9 +495,9 @@ public class frmCliente extends javax.swing.JFrame {
         txtNombre.transferFocus();
     }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void txtIdpersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdpersonaActionPerformed
+    private void txtidpersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidpersonaActionPerformed
 
-    }//GEN-LAST:event_txtIdpersonaActionPerformed
+    }//GEN-LAST:event_txtidpersonaActionPerformed
 
     private void txtnum_DocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnum_DocActionPerformed
         txtnum_Doc.transferFocus();
@@ -515,36 +515,54 @@ public class frmCliente extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         if(txtNombre.getText().length() == 0){
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un numero de producto");
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un nombre para el cliente");
             txtNombre.requestFocus();
             return;
         }
 
-        if(txtDescripcion.getText().length() == 0){
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar una descripción para el producto");
-            txtDescripcion.requestFocus();
+        if(txtaPaterno.getText().length() == 0){
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar una apellido paterno para el cliente");
+            txtaPaterno.requestFocus();
+            return;
+        }
+        
+        if(txtaMaterno.getText().length() == 0){
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar una apellido materno para el cliente");
+            txtaMaterno.requestFocus();
             return;
         }
 
         if(txtnum_Doc.getText().length() == 0){
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un precio para la venta del producto");
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un Numero de documento para el cliente");
             txtnum_Doc.requestFocus();
             return;
         }
+        
+         if(txtCodigo_cliente.getText().length() == 0){
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un codigo para el cliente");
+            txtCodigo_cliente.requestFocus();
+            return;
+        }
 
-        vProducto dts = new vProducto();
-        fProducto func = new fProducto();
+        vCliente dts = new vCliente();
+        fCliente func = new fCliente();
 
         dts.setNombre(txtNombre.getText());
-        dts.setDescripcion(txtDescripcion.getText());
-        dts.setPrecio_venta(Double.parseDouble(txtnum_Doc.getText()));
+        dts.setApaterno(txtaPaterno.getText());
+        dts.setAmaterno(txtaMaterno.getText());
+        
 
         int seleccionado = cmbtipo_Doc.getSelectedIndex();
-        dts.setUnidad_medida((String) cmbtipo_Doc.getItemAt(seleccionado));
-
+        dts.setTipo_documento((String) cmbtipo_Doc.getItemAt(seleccionado));
+        dts.setNum_documento(txtnum_Doc.getText());
+        dts.setDireccion(txtnum_Doc.getText());
+        dts.setTelefono(txtTelefono.getText());
+        dts.setEmail(txtEmail.getText());
+        dts.setCodigo_cliente(txtCodigo_cliente.getText());
+        
         if(accion.equals("guardar")){
             if(func.insertar(dts)){
-                JOptionPane.showMessageDialog(rootPane, "EL producto fue registrado satisfactoriamente");
+                JOptionPane.showMessageDialog(rootPane, "EL cliente fue registrado satisfactoriamente");
                 mostrar("");
                 inhabilitar();
 
@@ -552,10 +570,10 @@ public class frmCliente extends javax.swing.JFrame {
         }
 
         else if(accion.equals("editar")){
-            dts.setIdproducto(Integer.parseInt(txtIdpersona.getText()));
+            dts.setIdpersona(Integer.parseInt(txtidpersona.getText()));
 
             if(func.editar(dts)){
-                JOptionPane.showMessageDialog(rootPane, "El producto fue editado satisfactoriamente");
+                JOptionPane.showMessageDialog(rootPane, "El cliente fue editado satisfactoriamente");
                 mostrar("");
                 inhabilitar();
             }
@@ -574,11 +592,16 @@ public class frmCliente extends javax.swing.JFrame {
 
         int fila = tblListado.rowAtPoint(evt.getPoint());
 
-        txtIdpersona.setText(tblListado.getValueAt(fila, 0).toString());
+        txtidpersona.setText(tblListado.getValueAt(fila, 0).toString());
         txtNombre.setText(tblListado.getValueAt(fila, 1).toString());
-        txtDescripcion.setText(tblListado.getValueAt(fila, 2).toString());
-        cmbtipo_Doc.setSelectedItem(tblListado.getValueAt(fila, 3).toString());
-        txtnum_Doc.setText(tblListado.getValueAt(fila, 4).toString());
+        txtaPaterno.setText(tblListado.getValueAt(fila, 2).toString());
+        txtaMaterno.setText(tblListado.getValueAt(fila, 3).toString());
+        cmbtipo_Doc.setSelectedItem(tblListado.getValueAt(fila, 4).toString());
+        txtnum_Doc.setText(tblListado.getValueAt(fila, 5).toString());
+        txtDireccion.setText(tblListado.getValueAt(fila, 6).toString());
+        txtTelefono.setText(tblListado.getValueAt(fila, 7).toString());
+        txtEmail.setText(tblListado.getValueAt(fila, 8).toString());
+        txtCodigo_cliente.setText(tblListado.getValueAt(fila, 9).toString());
     }//GEN-LAST:event_tblListadoMouseClicked
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -586,14 +609,14 @@ public class frmCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if(!txtIdpersona.getText().equals("")){
-            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estas seguro de eliminar el producto?", "Confrimar", 2);
+        if(!txtidpersona.getText().equals("")){
+            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estas seguro de eliminar el cliente?", "Confrimar", 2);
 
             if(confirmacion==0){
-                fProducto func = new fProducto();
-                vProducto dts = new vProducto();
+                fCliente func = new fCliente();
+                vCliente dts = new vCliente();
 
-                dts.setIdproducto(Integer.parseInt(txtIdpersona.getText()));
+                dts.setIdpersona(Integer.parseInt(txtidpersona.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
@@ -606,27 +629,27 @@ public class frmCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalidaActionPerformed
 
     private void txtaPaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaPaternoActionPerformed
-        // TODO add your handling code here:
+        txtaPaterno.transferFocus();
     }//GEN-LAST:event_txtaPaternoActionPerformed
 
-    private void txtaaMaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaaMaternoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtaaMaternoActionPerformed
+    private void txtaMaternoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtaMaternoActionPerformed
+        txtaMaterno.transferFocus();
+    }//GEN-LAST:event_txtaMaternoActionPerformed
 
     private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
-        // TODO add your handling code here:
+        txtDireccion.transferFocus();
     }//GEN-LAST:event_txtDireccionActionPerformed
 
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
-        // TODO add your handling code here:
+        txtTelefono.transferFocus();
     }//GEN-LAST:event_txtTelefonoActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
-        // TODO add your handling code here:
+        txtEmail.transferFocus();
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void txtCodigo_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo_clienteActionPerformed
-        // TODO add your handling code here:
+        txtCodigo_cliente.transferFocus();
     }//GEN-LAST:event_txtCodigo_clienteActionPerformed
 
     /**
@@ -692,11 +715,11 @@ public class frmCliente extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigo_cliente;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtIdpersona;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTelefono;
+    private javax.swing.JTextField txtaMaterno;
     private javax.swing.JTextField txtaPaterno;
-    private javax.swing.JTextField txtaaMaterno;
+    private javax.swing.JTextField txtidpersona;
     private javax.swing.JTextField txtnum_Doc;
     // End of variables declaration//GEN-END:variables
 }
