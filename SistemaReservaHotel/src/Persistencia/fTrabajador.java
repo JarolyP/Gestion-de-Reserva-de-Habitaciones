@@ -31,8 +31,8 @@ public class fTrabajador {
         modelo = new DefaultTableModel(null, titulos);
         
         sSQL="Select p.idpersona,p.nombre,p.apaterno,p.amaterno,p.tipo_documento,p.num_documento,"
-                + "p.direccion,p.telefono,p.email,t.sueldo,t.acceso,t.logi,t.password,t.estado from persona p inner join Trabajador t "
-                + "on p.idpersona=c.idpersona where num_documento like '%"+ buscar + "%'order by idpersona desc";
+                + "p.direccion,p.telefono,p.email,t.sueldo,t.acceso,t.login,t.password,t.estado from persona p inner join Trabajador t "
+                + "on p.idpersona=t.idpersona where num_documento like '%"+ buscar + "%'order by idpersona desc";
         
         try {
             Statement st = cn.createStatement();
