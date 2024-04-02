@@ -5,7 +5,7 @@ import Persistencia.fTrabajador;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class frmTrabajador extends javax.swing.JFrame {
+public class frmTrabajador extends javax.swing.JInternalFrame {
 
     public frmTrabajador() {
         initComponents();
@@ -151,7 +151,10 @@ public class frmTrabajador extends javax.swing.JFrame {
         btnSalida = new javax.swing.JButton();
         lblTotalRegistros = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de Trabajadores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N

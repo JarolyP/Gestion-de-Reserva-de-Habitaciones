@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Acer
  */
-public class frmProducto extends javax.swing.JFrame {
+public class frmProducto extends javax.swing.JInternalFrame{
 
     
     public frmProducto() {
@@ -110,7 +110,10 @@ public class frmProducto extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Producto");

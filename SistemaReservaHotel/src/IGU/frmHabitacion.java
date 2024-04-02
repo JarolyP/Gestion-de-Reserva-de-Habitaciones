@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class frmHabitacion extends javax.swing.JFrame {
+public class frmHabitacion extends javax.swing.JInternalFrame {
 
     
     public frmHabitacion() {
@@ -116,7 +116,11 @@ public class frmHabitacion extends javax.swing.JFrame {
         btnSalida = new javax.swing.JButton();
         lblTotalRegistros = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Habitación");
