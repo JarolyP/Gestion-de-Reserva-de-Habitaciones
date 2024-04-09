@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package IGU;
 
 import Logica.vProducto;
@@ -11,10 +6,7 @@ import Persistencia.fProducto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Acer
- */
+
 public class frmReserva extends javax.swing.JInternalFrame{
 
     
@@ -30,38 +22,82 @@ public class frmReserva extends javax.swing.JInternalFrame{
         tblListado.getColumnModel().getColumn(0).setMaxWidth(0);
         tblListado.getColumnModel().getColumn(0).setMinWidth(0);
         tblListado.getColumnModel().getColumn(0).setPreferredWidth(0);
+        
+        tblListado.getColumnModel().getColumn(1).setMaxWidth(0);
+        tblListado.getColumnModel().getColumn(1).setMinWidth(0);
+        tblListado.getColumnModel().getColumn(1).setPreferredWidth(0);
+        
+        tblListado.getColumnModel().getColumn(3).setMaxWidth(0);
+        tblListado.getColumnModel().getColumn(3).setMinWidth(0);
+        tblListado.getColumnModel().getColumn(3).setPreferredWidth(0);
+        
+        tblListado.getColumnModel().getColumn(5).setMaxWidth(0);
+        tblListado.getColumnModel().getColumn(5).setMinWidth(0);
+        tblListado.getColumnModel().getColumn(5).setPreferredWidth(0);
     }
     
     void inhabilitar(){
-        txtIdproducto.setVisible(false);
-        cmbUnidad_Medida.setEnabled(false);
-        txtNombre.setEnabled(false);
-        txtDescripcion.setEnabled(false);
-        txtPrecio_Venta.setEnabled(false);
-
+        txtIdReserva.setVisible(false);
+        txtIdHabitacion.setVisible(false);
+        txtIdCliente.setVisible(false);
+        txtIdTrabajador.setVisible(false);
+        
+        txtNumero.setEnabled(false);
+        txtCliente.setEnabled(false);
+        txtTrabajador.setEnabled(false);
+        cmbTipo_Reserva.setEnabled(false);
+        
+        dcFecha_Reserva.setEnabled(false);
+        dcFecha_Ingreso.setEnabled(false);
+        dcFecha_Salida.setEnabled(false);
+        
+        txtCosto_alojamiento.setEnabled(false);
+        cmbTipo_Reserva.setEnabled(false);
+        
         btnGuardar.setEnabled(false);
         btnCancelar.setEnabled(false);
         btnEliminar.setEnabled(false);
-        txtIdproducto.setText("");
-        txtPrecio_Venta.setText("");
-        txtDescripcion.setText("");
+        btnBuscarCliente.setEnabled(false);
+        btnBuscarHabitacion.setEnabled(false);
+        
+        txtIdReserva.setText("");
+        txtIdCliente.setText("");
+        txtNumero.setText("");
+        txtCliente.setText("");
+        txtCosto_alojamiento.setText("");
+        txtIdHabitacion.setText("");
     }
     
     void habilitar(){
-        txtIdproducto.setVisible(false);
+        txtIdReserva.setVisible(false);
+        txtIdHabitacion.setVisible(false);
+        txtIdCliente.setVisible(false);
+        txtIdTrabajador.setVisible(false);
         
-        cmbUnidad_Medida.setEnabled(true);
-        txtNombre.setEnabled(true);
-        txtDescripcion.setEnabled(true);
-        txtPrecio_Venta.setEnabled(true);
+        txtNumero.setEnabled(false);
+        txtCliente.setEnabled(false);
+        txtTrabajador.setEnabled(false);
+        cmbTipo_Reserva.setEnabled(true);
+        
+        dcFecha_Reserva.setEnabled(true);
+        dcFecha_Ingreso.setEnabled(true);
+        dcFecha_Salida.setEnabled(true);
+        
+        txtCosto_alojamiento.setEnabled(true);
+        cmbTipo_Reserva.setEnabled(true);
         
         btnGuardar.setEnabled(true);
         btnCancelar.setEnabled(true);
         btnEliminar.setEnabled(true);
-        txtIdproducto.setText("");
-        txtPrecio_Venta.setText("");
-        txtDescripcion.setText("");
-        txtNombre.setText("");
+        btnBuscarCliente.setEnabled(true);
+        btnBuscarHabitacion.setEnabled(true);
+        
+        txtIdReserva.setText("");
+        txtIdCliente.setText("");
+        txtNumero.setText("");
+        txtCliente.setText("");
+        txtCosto_alojamiento.setText("");
+        txtIdHabitacion.setText("");
     }
     
     void mostrar(String buscar){
@@ -96,19 +132,33 @@ public class frmReserva extends javax.swing.JInternalFrame{
         btnSalida = new javax.swing.JButton();
         lblTotalRegistros = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        txtNombre = new javax.swing.JTextField();
+        txtIdHabitacion = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtIdproducto = new javax.swing.JTextField();
+        txtIdReserva = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtDescripcion = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
-        txtPrecio_Venta = new javax.swing.JTextField();
+        txtCosto_alojamiento = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        cmbUnidad_Medida = new javax.swing.JComboBox<>();
+        cmbTipo_Reserva = new javax.swing.JComboBox<>();
         btnNuevo = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        txtNumero = new javax.swing.JTextField();
+        txtIdCliente = new javax.swing.JTextField();
+        txtCliente = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtIdTrabajador = new javax.swing.JTextField();
+        txtTrabajador = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        dcFecha_Reserva = new com.toedter.calendar.JDateChooser();
+        jLabel10 = new javax.swing.JLabel();
+        dcFecha_Ingreso = new com.toedter.calendar.JDateChooser();
+        jLabel11 = new javax.swing.JLabel();
+        dcFecha_Salida = new com.toedter.calendar.JDateChooser();
+        jLabel12 = new javax.swing.JLabel();
+        cmbEstado_Reserva = new javax.swing.JComboBox<>();
+        btnBuscarHabitacion = new javax.swing.JButton();
+        btnBuscarCliente = new javax.swing.JButton();
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -116,10 +166,10 @@ public class frmReserva extends javax.swing.JInternalFrame{
         setMaximizable(true);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Producto");
+        jLabel1.setText("Reserva");
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 102));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listado de Reserva\n", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
 
         tblListado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -170,9 +220,6 @@ public class frmReserva extends javax.swing.JInternalFrame{
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblTotalRegistros)
@@ -181,7 +228,7 @@ public class frmReserva extends javax.swing.JInternalFrame{
                 .addContainerGap()
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                .addComponent(txtBuscar)
                 .addGap(18, 18, 18)
                 .addComponent(btnBuscar)
                 .addGap(26, 26, 26)
@@ -189,6 +236,7 @@ public class frmReserva extends javax.swing.JInternalFrame{
                 .addGap(18, 18, 18)
                 .addComponent(btnSalida)
                 .addGap(33, 33, 33))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,58 +248,54 @@ public class frmReserva extends javax.swing.JInternalFrame{
                     .addComponent(btnBuscar)
                     .addComponent(btnEliminar)
                     .addComponent(btnSalida))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblTotalRegistros)
                 .addGap(44, 44, 44))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de Reserva", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
 
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+        txtIdHabitacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
+                txtIdHabitacionActionPerformed(evt);
             }
         });
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Nombre:");
+        jLabel2.setText("Habitacion:");
 
-        txtIdproducto.addActionListener(new java.awt.event.ActionListener() {
+        txtIdReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdproductoActionPerformed(evt);
+                txtIdReservaActionPerformed(evt);
             }
         });
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Descripción:");
-
-        txtDescripcion.setColumns(20);
-        txtDescripcion.setRows(5);
-        jScrollPane2.setViewportView(txtDescripcion);
+        jLabel4.setText("Cliente:");
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Precio venta:");
+        jLabel6.setText("Costo:");
 
-        txtPrecio_Venta.addActionListener(new java.awt.event.ActionListener() {
+        txtCosto_alojamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrecio_VentaActionPerformed(evt);
+                txtCosto_alojamientoActionPerformed(evt);
             }
         });
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Unidad Medida:");
+        jLabel7.setText("Tipo Reserva:");
 
-        cmbUnidad_Medida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "KG", "UND", "LT", "MIN", "GLB", " " }));
-        cmbUnidad_Medida.addActionListener(new java.awt.event.ActionListener() {
+        cmbTipo_Reserva.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reserva", "Alquiler" }));
+        cmbTipo_Reserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbUnidad_MedidaActionPerformed(evt);
+                cmbTipo_ReservaActionPerformed(evt);
             }
         });
 
@@ -276,74 +320,206 @@ public class frmReserva extends javax.swing.JInternalFrame{
             }
         });
 
+        txtNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroActionPerformed(evt);
+            }
+        });
+
+        txtIdCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdClienteActionPerformed(evt);
+            }
+        });
+
+        txtCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtClienteActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Trabajador:");
+
+        txtIdTrabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdTrabajadorActionPerformed(evt);
+            }
+        });
+
+        txtTrabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTrabajadorActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Fecha Reserva:");
+
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Fecha Ingreso:");
+
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Fecha Salida:");
+
+        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Estado Reserva:");
+
+        cmbEstado_Reserva.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alquiler", "Pagada", "Anulada" }));
+        cmbEstado_Reserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbEstado_ReservaActionPerformed(evt);
+            }
+        });
+
+        btnBuscarHabitacion.setText("...");
+
+        btnBuscarCliente.setText("...");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(txtIdReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
+                        .addComponent(jLabel7)
+                        .addGap(45, 45, 45)
+                        .addComponent(cmbTipo_Reserva, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel6))
-                                    .addGap(39, 39, 39)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cmbUnidad_Medida, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtPrecio_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel4)
-                                            .addGap(54, 54, 54))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel2)
-                                            .addGap(77, 77, 77)))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(43, 43, 43)))
+                            .addComponent(jLabel12)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41)
+                                .addGap(42, 42, 42)
                                 .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(58, 58, 58)
-                                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(txtIdproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                                .addGap(42, 42, 42)
+                                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(jLabel8))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel10)
+                                    .addGap(39, 39, 39)
+                                    .addComponent(dcFecha_Ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(dcFecha_Reserva, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel6))
+                                .addGap(47, 47, 47)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCosto_alojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dcFecha_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbEstado_Reserva, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(59, 59, 59))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5))
+                                        .addGap(57, 57, 57)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txtIdTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnBuscarCliente))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txtIdHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnBuscarHabitacion)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtIdproducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addComponent(txtIdReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel2)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtIdTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtIdHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnBuscarHabitacion))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnBuscarCliente))))
+                        .addGap(27, 27, 27)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(10, 10, 10))
+                    .addComponent(cmbTipo_Reserva, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcFecha_Reserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel10)
+                        .addGap(13, 13, 13))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dcFecha_Ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(dcFecha_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCosto_alojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(cmbEstado_Reserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(cmbUnidad_Medida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtPrecio_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -351,25 +527,26 @@ public class frmReserva extends javax.swing.JInternalFrame{
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18))
+                .addContainerGap())
         );
 
         pack();
@@ -383,11 +560,11 @@ public class frmReserva extends javax.swing.JInternalFrame{
 
         int fila = tblListado.rowAtPoint(evt.getPoint());
 
-        txtIdproducto.setText(tblListado.getValueAt(fila, 0).toString());
-        txtNombre.setText(tblListado.getValueAt(fila, 1).toString());
+        txtIdReserva.setText(tblListado.getValueAt(fila, 0).toString());
+        txtIdHabitacion.setText(tblListado.getValueAt(fila, 1).toString());
         txtDescripcion.setText(tblListado.getValueAt(fila, 2).toString());
-        cmbUnidad_Medida.setSelectedItem(tblListado.getValueAt(fila, 3).toString());
-        txtPrecio_Venta.setText(tblListado.getValueAt(fila, 4).toString());
+        cmbTipo_Reserva.setSelectedItem(tblListado.getValueAt(fila, 3).toString());
+        txtCosto_alojamiento.setText(tblListado.getValueAt(fila, 4).toString());
 
     }//GEN-LAST:event_tblListadoMouseClicked
 
@@ -396,14 +573,14 @@ public class frmReserva extends javax.swing.JInternalFrame{
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if(!txtIdproducto.getText().equals("")){
+        if(!txtIdReserva.getText().equals("")){
             int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estas seguro de eliminar el producto?", "Confrimar", 2);
 
             if(confirmacion==0){
                 fProducto func = new fProducto();
                 vProducto dts = new vProducto();
 
-                dts.setIdproducto(Integer.parseInt(txtIdproducto.getText()));
+                dts.setIdproducto(Integer.parseInt(txtIdReserva.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
@@ -415,21 +592,21 @@ public class frmReserva extends javax.swing.JInternalFrame{
         this.dispose();
     }//GEN-LAST:event_btnSalidaActionPerformed
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
-        txtNombre.transferFocus();
-    }//GEN-LAST:event_txtNombreActionPerformed
+    private void txtIdHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdHabitacionActionPerformed
+        txtIdHabitacion.transferFocus();
+    }//GEN-LAST:event_txtIdHabitacionActionPerformed
 
-    private void txtIdproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdproductoActionPerformed
+    private void txtIdReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdReservaActionPerformed
 
-    }//GEN-LAST:event_txtIdproductoActionPerformed
+    }//GEN-LAST:event_txtIdReservaActionPerformed
 
-    private void txtPrecio_VentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecio_VentaActionPerformed
-        txtPrecio_Venta.transferFocus();
-    }//GEN-LAST:event_txtPrecio_VentaActionPerformed
+    private void txtCosto_alojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCosto_alojamientoActionPerformed
+        txtCosto_alojamiento.transferFocus();
+    }//GEN-LAST:event_txtCosto_alojamientoActionPerformed
 
-    private void cmbUnidad_MedidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUnidad_MedidaActionPerformed
-        cmbUnidad_Medida.transferFocus();
-    }//GEN-LAST:event_cmbUnidad_MedidaActionPerformed
+    private void cmbTipo_ReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipo_ReservaActionPerformed
+        cmbTipo_Reserva.transferFocus();
+    }//GEN-LAST:event_cmbTipo_ReservaActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         habilitar();
@@ -438,9 +615,9 @@ public class frmReserva extends javax.swing.JInternalFrame{
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if(txtNombre.getText().length() == 0){
+        if(txtIdHabitacion.getText().length() == 0){
             JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un numero de producto");
-            txtNombre.requestFocus();
+            txtIdHabitacion.requestFocus();
             return;
         }
 
@@ -450,21 +627,21 @@ public class frmReserva extends javax.swing.JInternalFrame{
             return;
         }
 
-        if(txtPrecio_Venta.getText().length() == 0){
+        if(txtCosto_alojamiento.getText().length() == 0){
             JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un precio para la venta del producto");
-            txtPrecio_Venta.requestFocus();
+            txtCosto_alojamiento.requestFocus();
             return;
         }
 
         vProducto dts = new vProducto();
         fProducto func = new fProducto();
 
-        dts.setNombre(txtNombre.getText());
+        dts.setNombre(txtIdHabitacion.getText());
         dts.setDescripcion(txtDescripcion.getText());
-        dts.setPrecio_venta(Double.parseDouble(txtPrecio_Venta.getText()));
+        dts.setPrecio_venta(Double.parseDouble(txtCosto_alojamiento.getText()));
 
-        int seleccionado = cmbUnidad_Medida.getSelectedIndex();
-        dts.setUnidad_medida((String) cmbUnidad_Medida.getItemAt(seleccionado));
+        int seleccionado = cmbTipo_Reserva.getSelectedIndex();
+        dts.setUnidad_medida((String) cmbTipo_Reserva.getItemAt(seleccionado));
 
         if(accion.equals("guardar")){
             if(func.insertar(dts)){
@@ -476,7 +653,7 @@ public class frmReserva extends javax.swing.JInternalFrame{
         }
 
         else if(accion.equals("editar")){
-            dts.setIdproducto(Integer.parseInt(txtIdproducto.getText()));
+            dts.setIdproducto(Integer.parseInt(txtIdReserva.getText()));
 
             if(func.editar(dts)){
                 JOptionPane.showMessageDialog(rootPane, "El producto fue editado satisfactoriamente");
@@ -489,6 +666,30 @@ public class frmReserva extends javax.swing.JInternalFrame{
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeroActionPerformed
+
+    private void txtIdClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdClienteActionPerformed
+
+    private void txtClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtClienteActionPerformed
+
+    private void txtIdTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdTrabajadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdTrabajadorActionPerformed
+
+    private void txtTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTrabajadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTrabajadorActionPerformed
+
+    private void cmbEstado_ReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEstado_ReservaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbEstado_ReservaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -528,28 +729,42 @@ public class frmReserva extends javax.swing.JInternalFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnBuscarCliente;
+    private javax.swing.JButton btnBuscarHabitacion;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSalida;
-    private javax.swing.JComboBox<String> cmbUnidad_Medida;
+    private javax.swing.JComboBox<String> cmbEstado_Reserva;
+    private javax.swing.JComboBox<String> cmbTipo_Reserva;
+    private com.toedter.calendar.JDateChooser dcFecha_Ingreso;
+    private com.toedter.calendar.JDateChooser dcFecha_Reserva;
+    private com.toedter.calendar.JDateChooser dcFecha_Salida;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblTotalRegistros;
     private javax.swing.JTable tblListado;
     private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextArea txtDescripcion;
-    private javax.swing.JTextField txtIdproducto;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtPrecio_Venta;
+    private javax.swing.JTextField txtCliente;
+    private javax.swing.JTextField txtCosto_alojamiento;
+    private javax.swing.JTextField txtIdCliente;
+    private javax.swing.JTextField txtIdHabitacion;
+    private javax.swing.JTextField txtIdReserva;
+    private javax.swing.JTextField txtIdTrabajador;
+    private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtTrabajador;
     // End of variables declaration//GEN-END:variables
 }
