@@ -53,6 +53,42 @@ public class fHabitacion {
         }   
     }
     
+    public DefaultTableModel mostrarVista(String buscar){
+        DefaultTableModel modelo;
+        
+        String [] titulos = {"ID", "Número", "Piso", "Descripción", "Caracteristicas", "Estado", "Tipo habitación"};
+        
+        String [] registro = new String [8];
+        
+        totalregistros = 0;
+        modelo = new DefaultTableModel(null, titulos);
+        
+        sSQL="Select * from habitacion where piso like '%"+ buscar + "%' and estado='Disponible' order by idhabitacion";
+        
+        try {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+            
+            while (rs.next()) {                
+                registro [0]=rs.getString("idhabitacion");
+                registro [1]=rs.getString("numero");
+                registro [2]=rs.getString("piso");
+                registro [3]=rs.getString("descripcion");
+                registro [4]=rs.getString("caracteristicas");
+                registro [5]=rs.getString("precio_diario");
+                registro [6]=rs.getString("estado");
+                registro [7]=rs.getString("tipo_habitacion");
+                
+                totalregistros=totalregistros+1;
+                modelo.addRow(registro);
+            }
+            return modelo;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }   
+    }
+    
     public boolean insertar (vHabitacion dts){
         sSQL="insert into habitacion (numero,piso,descripcion,caracteristicas,precio_diario,estado,tipo_habitacion)"+
                 "values (?,?,?,?,?,?,?)";

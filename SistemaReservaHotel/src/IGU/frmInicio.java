@@ -59,7 +59,7 @@ public class frmInicio extends javax.swing.JFrame {
         btnArchivo.setMnemonic('e');
         btnArchivo.setText("Archivo");
 
-        cutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        cutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         cutMenuItem.setMnemonic('t');
         cutMenuItem.setText("Habitaciones");
         cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +69,7 @@ public class frmInicio extends javax.swing.JFrame {
         });
         btnArchivo.add(cutMenuItem);
 
-        copyMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        copyMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Productos");
         copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -84,12 +84,17 @@ public class frmInicio extends javax.swing.JFrame {
         btnReservas.setMnemonic('h');
         btnReservas.setText("Reservas");
 
-        contentMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        contentMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         contentMenuItem.setMnemonic('c');
         contentMenuItem.setText("Reservas y Consumos");
+        contentMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contentMenuItemActionPerformed(evt);
+            }
+        });
         btnReservas.add(contentMenuItem);
 
-        aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         aboutMenuItem.setMnemonic('a');
         aboutMenuItem.setText("Clientes");
         aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +104,7 @@ public class frmInicio extends javax.swing.JFrame {
         });
         btnReservas.add(aboutMenuItem);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem1.setText("Pagos");
         btnReservas.add(jMenuItem1);
 
@@ -110,7 +115,7 @@ public class frmInicio extends javax.swing.JFrame {
 
         btnConfiguraciones.setText("Configuraciones");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem2.setText("Usuarios y Accesos");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,11 +131,11 @@ public class frmInicio extends javax.swing.JFrame {
 
         btnAyuda.setText("Ayuda");
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem3.setText("Acerca de...");
         btnAyuda.add(jMenuItem3);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem4.setText("Ayuda");
         btnAyuda.add(jMenuItem4);
 
@@ -193,6 +198,15 @@ public class frmInicio extends javax.swing.JFrame {
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
         this.dispose();
     }//GEN-LAST:event_btnSalirMouseClicked
+
+    private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
+        frmReserva form = new frmReserva();
+        Escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+        frmReserva.txtIdTrabajador.setText(lblIdpersona.getText);
+        frmReser
+    }//GEN-LAST:event_contentMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
