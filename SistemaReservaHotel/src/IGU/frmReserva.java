@@ -1,8 +1,12 @@
 package IGU;
 
 import Logica.vProducto;
+import Logica.vReserva;
 import Persistencia.fHabitacion;
 import Persistencia.fProducto;
+import Persistencia.fReserva;
+import java.sql.Date;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,6 +21,7 @@ public class frmReserva extends javax.swing.JInternalFrame{
     }
     
     private String accion = "guardar";
+    public static int idusuario;
     
     void ocultar_columnas(){
         tblListado.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -104,7 +109,7 @@ public class frmReserva extends javax.swing.JInternalFrame{
         try {
             DefaultTableModel modelo;
             
-            fProducto func = new fProducto();
+            fReserva func = new fReserva();
             modelo=func.mostrar(buscar);
             
             tblListado.setModel(modelo);
@@ -562,10 +567,18 @@ public class frmReserva extends javax.swing.JInternalFrame{
 
         txtIdReserva.setText(tblListado.getValueAt(fila, 0).toString());
         txtIdHabitacion.setText(tblListado.getValueAt(fila, 1).toString());
-        txtDescripcion.setText(tblListado.getValueAt(fila, 2).toString());
-        cmbTipo_Reserva.setSelectedItem(tblListado.getValueAt(fila, 3).toString());
-        txtCosto_alojamiento.setText(tblListado.getValueAt(fila, 4).toString());
-
+        txtNumero.setText(tblListado.getValueAt(fila, 2).toString());
+        txtIdCliente.setText(tblListado.getValueAt(fila, 3).toString());
+        txtCliente.setText(tblListado.getValueAt(fila, 4).toString());
+        txtIdTrabajador.setText(tblListado.getValueAt(fila, 5).toString());
+        txtTrabajador.setText(tblListado.getValueAt(fila, 6).toString());
+        
+        cmbTipo_Reserva.setSelectedItem(tblListado.getValueAt(fila, 7).toString());
+        dcFecha_Reserva.setDate(Date.valueOf(tblListado.getValueAt(fila, 8).toString()));
+        dcFecha_Ingreso.setDate(Date.valueOf(tblListado.getValueAt(fila, 9).toString()));
+        dcFecha_Salida.setDate(Date.valueOf(tblListado.getValueAt(fila, 10).toString()));
+        txtCosto_alojamiento.setText(tblListado.getValueAt(fila, 11).toString());
+        cmbEstado_Reserva.setSelectedItem(tblListado.getValueAt(fila, 7).toString());
     }//GEN-LAST:event_tblListadoMouseClicked
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -574,13 +587,13 @@ public class frmReserva extends javax.swing.JInternalFrame{
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         if(!txtIdReserva.getText().equals("")){
-            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estas seguro de eliminar el producto?", "Confrimar", 2);
+            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estas seguro de eliminar la reserva?", "Confrimar", 2);
 
             if(confirmacion==0){
-                fProducto func = new fProducto();
-                vProducto dts = new vProducto();
+                fReserva func = new fReserva();
+                vReserva dts = new vReserva();
 
-                dts.setIdproducto(Integer.parseInt(txtIdReserva.getText()));
+                dts.setIdreserva(Integer.parseInt(txtIdReserva.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
@@ -616,36 +629,61 @@ public class frmReserva extends javax.swing.JInternalFrame{
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         if(txtIdHabitacion.getText().length() == 0){
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un numero de producto");
+            JOptionPane.showConfirmDialog(rootPane, "Debes seleccionar una habitación");
             txtIdHabitacion.requestFocus();
             return;
         }
 
-        if(txtDescripcion.getText().length() == 0){
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar una descripción para el producto");
-            txtDescripcion.requestFocus();
+        if(txtIdCliente.getText().length() == 0){
+            JOptionPane.showConfirmDialog(rootPane, "Debes seleccionar una cliente");
+            txtIdCliente.requestFocus();
             return;
         }
 
         if(txtCosto_alojamiento.getText().length() == 0){
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un precio para la venta del producto");
+            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un precio para el alojamineto");
             txtCosto_alojamiento.requestFocus();
             return;
         }
 
-        vProducto dts = new vProducto();
-        fProducto func = new fProducto();
+        vReserva dts = new vReserva();
+        fReserva func = new fReserva();
 
-        dts.setNombre(txtIdHabitacion.getText());
-        dts.setDescripcion(txtDescripcion.getText());
-        dts.setPrecio_venta(Double.parseDouble(txtCosto_alojamiento.getText()));
+        dts.setIdhabitacion(Integer.parseInt(txtIdHabitacion.getText()));
+        dts.setIdcliente(Integer.parseInt(txtIdCliente.getText()));
+        dts.setIdtrabajador(idusuario);
 
         int seleccionado = cmbTipo_Reserva.getSelectedIndex();
-        dts.setUnidad_medida((String) cmbTipo_Reserva.getItemAt(seleccionado));
-
+        dts.setTipo_reserva((String) cmbTipo_Reserva.getItemAt(seleccionado));
+        
+        Calendar cal;
+        int d,m,a;
+        cal = dcFecha_Reserva.getCalendar();
+        d=cal.get(Calendar.DAY_OF_MONTH);
+        m=cal.get(Calendar.MONTH);
+        a=cal.get(Calendar.YEAR) - 1900;
+        dts.setFecha_reserva(new Date(a,m,d));
+        
+        cal = dcFecha_Ingreso.getCalendar();
+        d=cal.get(Calendar.DAY_OF_MONTH);
+        m=cal.get(Calendar.MONTH);
+        a=cal.get(Calendar.YEAR) - 1900;
+        dts.setFecha_reserva(new Date(a,m,d));
+        
+        cal = dcFecha_Salida.getCalendar();
+        d=cal.get(Calendar.DAY_OF_MONTH);
+        m=cal.get(Calendar.MONTH);
+        a=cal.get(Calendar.YEAR) - 1900;
+        dts.setFecha_reserva(new Date(a,m,d));
+        
+        dts.setCosto_alojamineto(Double.parseDouble(txtCosto_alojamiento.getText()));
+        seleccionado = cmbEstado_Reserva.getSelectedIndex();
+        dts.setEstado((String) cmbEstado_Reserva.getItemAt(seleccionado));
+        
+        
         if(accion.equals("guardar")){
             if(func.insertar(dts)){
-                JOptionPane.showMessageDialog(rootPane, "EL producto fue registrado satisfactoriamente");
+                JOptionPane.showMessageDialog(rootPane, "La reserva fue registrado satisfactoriamente");
                 mostrar("");
                 inhabilitar();
 
@@ -653,10 +691,10 @@ public class frmReserva extends javax.swing.JInternalFrame{
         }
 
         else if(accion.equals("editar")){
-            dts.setIdproducto(Integer.parseInt(txtIdReserva.getText()));
-
+            dts.setIdreserva(Integer.parseInt(txtIdReserva.getText()));
+            dts.setIdtrabajador(Integer.parseInt(txtIdTrabajador.getText()));
             if(func.editar(dts)){
-                JOptionPane.showMessageDialog(rootPane, "El producto fue editado satisfactoriamente");
+                JOptionPane.showMessageDialog(rootPane, "La reserva fue editado satisfactoriamente");
                 mostrar("");
                 inhabilitar();
             }
@@ -691,9 +729,6 @@ public class frmReserva extends javax.swing.JInternalFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbEstado_ReservaActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

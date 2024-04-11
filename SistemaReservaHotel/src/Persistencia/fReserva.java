@@ -28,12 +28,12 @@ public class fReserva {
         modelo = new DefaultTableModel(null, titulos);
         
         sSQL="Select r.idreserva,r.idhabitacion,h.numero,r.idcliente," + 
-                "(select nombre form persona where idpersona=r.idcliente)as clienten,"
-                + "(select apaterno form persona where idpersona=r.idcliente)as clienteap,"
-                + "r.idtrabajador, (select nombre form persona where idpersona=r.idtrabajador)as trabajadorn,"
-                + "(select apaterno form persona where idpersona=r.idtrabajador)as trabajadorap,"
-                + "r.tipo_reserva,r.fecha_reserva,r.fecha_ingresa,r.fecha_salida,"
-                + "r.costo_alojamiento,r.estado from reserva r inner join habitacion h on r.idhabitacion=h.idhabitacion where r.fecha_reserva like '%"+ buscar + "%'order by idreserva desc";
+            "(select nombre from persona where idpersona=r.idcliente)as clienten,"
+            + "(select apaterno from persona where idpersona=r.idcliente)as clienteap,"
+            + "r.idtrabajador, (select nombre from persona where idpersona=r.idtrabajador)as trabajadorn,"
+            + "(select apaterno from persona where idpersona=r.idtrabajador)as trabajadorap,"
+            + "r.tipo_reserva,r.fecha_reserva,r.fecha_ingresa,r.fecha_salida,"
+            + "r.costo_alojamiento,r.estado from reserva r inner join habitacion h on r.idhabitacion=h.idhabitacion where r.fecha_reserva like '%"+ buscar + "%'order by idreserva desc";
         
         try {
             Statement st = cn.createStatement();
