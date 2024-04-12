@@ -30,6 +30,11 @@ public class frmInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         Escritorio = new javax.swing.JDesktopPane();
+        lblIdPersona = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblAPaterno = new javax.swing.JLabel();
+        lblAMaterno = new javax.swing.JLabel();
+        lblAcceso = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         btnSisReserva = new javax.swing.JMenu();
         btnArchivo = new javax.swing.JMenu();
@@ -51,6 +56,36 @@ public class frmInicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Escritorio.setBackground(new java.awt.Color(51, 255, 255));
+
+        lblIdPersona.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblIdPersona.setForeground(new java.awt.Color(0, 0, 0));
+        lblIdPersona.setText("jLabel1");
+        Escritorio.add(lblIdPersona);
+        lblIdPersona.setBounds(10, 20, 120, 19);
+
+        lblNombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombre.setText("jLabel2");
+        Escritorio.add(lblNombre);
+        lblNombre.setBounds(10, 60, 130, 19);
+
+        lblAPaterno.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAPaterno.setForeground(new java.awt.Color(0, 0, 0));
+        lblAPaterno.setText("jLabel3");
+        Escritorio.add(lblAPaterno);
+        lblAPaterno.setBounds(10, 100, 130, 19);
+
+        lblAMaterno.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAMaterno.setForeground(new java.awt.Color(0, 0, 0));
+        lblAMaterno.setText("jLabel4");
+        Escritorio.add(lblAMaterno);
+        lblAMaterno.setBounds(10, 150, 120, 19);
+
+        lblAcceso.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAcceso.setForeground(new java.awt.Color(0, 0, 0));
+        lblAcceso.setText("jLabel5");
+        Escritorio.add(lblAcceso);
+        lblAcceso.setBounds(10, 200, 120, 19);
 
         btnSisReserva.setMnemonic('f');
         btnSisReserva.setText("SisReseva");
@@ -204,8 +239,9 @@ public class frmInicio extends javax.swing.JFrame {
         Escritorio.add(form);
         form.toFront();
         form.setVisible(true);
-        frmReserva.txtIdTrabajador.setText(lblIdpersona.getText);
-        frmReser
+        frmReserva.txtIdTrabajador.setText(lblIdPersona.getText());
+        frmReserva.txtTrabajador.setText(lblNombre.getText()+ " " + lblAPaterno.getText());
+        frmReserva.idusuario=Integer.parseInt(lblIdPersona.getText());
     }//GEN-LAST:event_contentMenuItemActionPerformed
 
     /**
@@ -246,9 +282,9 @@ public class frmInicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenu btnArchivo;
+    public static javax.swing.JMenu btnArchivo;
     private javax.swing.JMenu btnAyuda;
-    private javax.swing.JMenu btnConfiguraciones;
+    public static javax.swing.JMenu btnConfiguraciones;
     private javax.swing.JMenu btnConsultas;
     private javax.swing.JMenu btnHerramientas;
     private javax.swing.JMenu btnReservas;
@@ -261,6 +297,11 @@ public class frmInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    public static javax.swing.JLabel lblAMaterno;
+    public static javax.swing.JLabel lblAPaterno;
+    public static javax.swing.JLabel lblAcceso;
+    public static javax.swing.JLabel lblIdPersona;
+    public static javax.swing.JLabel lblNombre;
     private javax.swing.JMenuBar menuBar;
     // End of variables declaration//GEN-END:variables
 
