@@ -280,7 +280,7 @@ public class frmInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane Escritorio;
+    public static javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuItem aboutMenuItem;
     public static javax.swing.JMenu btnArchivo;
     private javax.swing.JMenu btnAyuda;
